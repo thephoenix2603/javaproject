@@ -25,9 +25,21 @@ public class Quiz extends JFrame{
 	JLabel roll = new JLabel("Enter your roll no. : ") ;
 	JTextField tf2 = new JTextField(25);
 
-	JLabel Q1 = new JLabel("Question001.. ") ;
-	JLabel Q2 = new JLabel("Question002.. ") ;
-	JLabel Q3 = new JLabel("Question003.. ") ;
+	JLabel Q1 = new JLabel("Question001.. 4 - 2 ? ") ;
+	JRadioButton Two = new JRadioButton("2");
+	JRadioButton Three = new JRadioButton("3");
+	JRadioButton Four = new JRadioButton("4");
+	JRadioButton Five = new JRadioButton("5");
+	JLabel Q2 = new JLabel("Question002.. 99 + 1 ? ") ;
+	JRadioButton hundred = new JRadioButton("100");
+	JRadioButton thundred = new JRadioButton("200");
+	JRadioButton fifty = new JRadioButton("50");
+	JRadioButton nine = new JRadioButton("9");
+	JLabel Q3 = new JLabel("Question003.. 2 - 2 ? ") ;
+	JRadioButton One = new JRadioButton("1");
+	JRadioButton Zero = new JRadioButton("0");
+	JRadioButton mOne = new JRadioButton("-1");
+	JRadioButton mTwo = new JRadioButton("-2");
 	
 
 	public Quiz() {
@@ -38,15 +50,11 @@ public class Quiz extends JFrame{
 		roll.setFont(new Font("Osward",Font.BOLD,38));
 		
 		name.setBounds(45, 145, 375, 200);
-		//add(name);
 		roll.setBounds(45, 225, 375, 200);
-		//add(roll);
 		tf1.setFont(new Font("Arial",Font.BOLD,14));
 		tf1.setBounds(400,235,230,30);
-		add(tf1);
 		tf2.setFont(new Font("Arial",Font.BOLD,14));
 		tf2.setBounds(400,310,230,30);
-		add(tf2);
 
 		
 		panelFirst.add(name);
@@ -56,13 +64,28 @@ public class Quiz extends JFrame{
 		panelFirst.add(tf2);
 		panelFirst.add(buttonOne);
 		panelSecond.add(Q1);
+		panelSecond.add(Two);
+		panelSecond.add(Three);
+		panelSecond.add(Four);
+		panelSecond.add(Five);
+		
 		panelSecond.add(Q2);
+		panelSecond.add(hundred);
+		panelSecond.add(thundred);
+		panelSecond.add(fifty);
+		panelSecond.add(nine);
+
 		panelSecond.add(buttonSecond);
 		panelThird.add(Q3);
+		panelThird.add(One);
+		panelThird.add(Zero);
+		panelThird.add(mOne);
+		panelThird.add(mTwo);
+
 		panelThird.add(buttonThird);
 		panelThird.add(buttonFourth);
 
-		panelFirst.setBackground(Color.BLACK);
+		panelFirst.setBackground(Color.gray);
 		panelSecond.setBackground(Color.pink);
 
 		panelCont.add(panelFirst, "1");
@@ -95,7 +118,12 @@ public class Quiz extends JFrame{
 		buttonFourth.addActionListener(new ActionListener() {
 			@Override
 			public void actionPerformed(ActionEvent arg0) {
-				//submit karneka. marks calculate karneka.
+				int marks=0;
+				if(Two.isSelected() == true) marks++;
+				if(hundred.isSelected() == true) marks++;
+				if(Zero.isSelected() == true) marks++;
+
+				JOptionPane.showMessageDialog(this, tf1.getText()+ "'s  (" + tf2.getText() + ") Score : "+ marks ); 
 			}
 		});
 		
