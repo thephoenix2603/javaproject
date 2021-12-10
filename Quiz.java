@@ -31,17 +31,20 @@ public class Quiz extends JFrame{
 	JRadioButton Three = new JRadioButton("3");
 	JRadioButton Four = new JRadioButton("4");
 	JRadioButton Five = new JRadioButton("5");
+
 	JLabel Q2 = new JLabel("Question 2.. 99 + 1 ? ") ;
 	JRadioButton hundred = new JRadioButton("100");
 	JRadioButton thundred = new JRadioButton("200");
 	JRadioButton fifty = new JRadioButton("50");
 	JRadioButton nine = new JRadioButton("9");
+
 	JLabel Q3 = new JLabel("Question 3.. 2 - 2 ? ") ;
 	JRadioButton One = new JRadioButton("1");
 	JRadioButton Zero = new JRadioButton("0");
 	JRadioButton mOne = new JRadioButton("-1");
 	JRadioButton mTwo = new JRadioButton("-2");
 	
+
 
 	public Quiz() {
 		
@@ -82,6 +85,12 @@ public class Quiz extends JFrame{
 		panelSecond.add(Four);
 		panelSecond.add(Five);
 		
+		ButtonGroup groop1 = new ButtonGroup();
+    	groop1.add(Two);
+    	groop1.add(Three);
+    	groop1.add(Four);
+    	groop1.add(Five);
+
 		Q2.setFont(new Font("Raleway",Font.BOLD,38));
 		Q2.setForeground(Color.decode("#1c0052"));
 		hundred.setFont(new Font("Raleway",Font.BOLD,38));
@@ -98,6 +107,12 @@ public class Quiz extends JFrame{
 		panelSecond.add(thundred);
 		panelSecond.add(fifty);
 		panelSecond.add(nine);
+
+		ButtonGroup groop2 = new ButtonGroup();
+    	groop2.add(hundred);
+    	groop2.add(thundred);
+    	groop2.add(fifty);
+    	groop2.add(nine);
 
 		Q3.setFont(new Font("Raleway",Font.BOLD,45));
 		Q3.setForeground(Color.decode("#1c0052"));
@@ -116,6 +131,12 @@ public class Quiz extends JFrame{
 		panelThird.add(Zero);
 		panelThird.add(mOne);
 		panelThird.add(mTwo);
+
+		ButtonGroup groop3 = new ButtonGroup();
+    	groop3.add(One);
+    	groop3.add(Zero);
+    	groop3.add(mOne);
+    	groop3.add(mTwo);
 
 		panelThird.add(buttonThird);
 		panelThird.add(buttonFourth);
@@ -161,7 +182,7 @@ public class Quiz extends JFrame{
  			UIManager.put("OptionPane.background",Color.decode("#cdecb6"));
 			UIManager.put("Panel.background",Color.decode("#cdecb6"));
 			//UIManager.put("Panel.title", toString() );
-				JOptionPane.showMessageDialog(tf1, tf1.getText()+ "'s  (" + tf2.getText() + ") Score : "+ marks, "Result", JOptionPane.INFORMATION_MESSAGE); 
+				JOptionPane.showMessageDialog(tf1, tf1.getText()+ "'s ( " + tf2.getText() + " ) Score : "+ marks, "Result", JOptionPane.INFORMATION_MESSAGE); 
 			}
 		});
 		
