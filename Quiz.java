@@ -123,7 +123,7 @@ public class Quiz extends JFrame{
 				if(hundred.isSelected() == true) marks++;
 				if(Zero.isSelected() == true) marks++;
 
-				JOptionPane.showMessageDialog(this, tf1.getText()+ "'s  (" + tf2.getText() + ") Score : "+ marks ); 
+				JOptionPane.showMessageDialog(tf1, tf1.getText()+ "'s  (" + tf2.getText() + ") Score : "+ marks ); 
 			}
 		});
 		
