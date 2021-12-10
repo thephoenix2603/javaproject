@@ -48,9 +48,10 @@ public class Quiz extends JFrame{
 
 		name.setFont(new Font("Osward",Font.BOLD,38)); 
 		roll.setFont(new Font("Osward",Font.BOLD,38));
-		
-		name.setBounds(45, 145, 375, 200);
-		roll.setBounds(45, 225, 375, 200);
+		name.setForeground(Color.decode("#1c0052"));
+		name.setBounds(250, 145, 375, 200);
+		roll.setBounds(250, 225, 375, 200);
+		roll.setForeground(Color.decode("#1c0052"));
 		tf1.setFont(new Font("Arial",Font.BOLD,14));
 		tf1.setBounds(400,235,230,30);
 		tf2.setFont(new Font("Arial",Font.BOLD,14));
@@ -85,9 +86,9 @@ public class Quiz extends JFrame{
 		panelThird.add(buttonThird);
 		panelThird.add(buttonFourth);
 
-		panelFirst.setBackground(Color.gray);
-		panelSecond.setBackground(Color.pink);
-
+		panelFirst.setBackground(Color.decode("#dcc5f1"));
+		panelSecond.setBackground(Color.decode("#f1d0c5"));
+		panelThird.setBackground(Color.decode("#c5f1ee"));
 		panelCont.add(panelFirst, "1");
 		panelCont.add(panelSecond, "2");
 		panelCont.add(panelThird, "3");
@@ -122,7 +123,10 @@ public class Quiz extends JFrame{
 				if(Two.isSelected() == true) marks++;
 				if(hundred.isSelected() == true) marks++;
 				if(Zero.isSelected() == true) marks++;
-
+				
+ 			UIManager.put("OptionPane.background",Color.decode("#cdecb6"));
+			UIManager.put("Panel.background",Color.decode("#cdecb6"));
+			
 				JOptionPane.showMessageDialog(tf1, tf1.getText()+ "'s  (" + tf2.getText() + ") Score : "+ marks ); 
 			}
 		});
