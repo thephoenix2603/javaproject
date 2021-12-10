@@ -6,11 +6,16 @@ import java.awt.event.ActionListener;
 public class Quiz extends JFrame{
 	JFrame frame = new JFrame("Quiz by Khushi & Aayush");
 	
+	int pno = 1;
 	JPanel panelCont = new JPanel();
 	JPanel panelFirst = new JPanel();
 	JPanel panelSecond = new JPanel();
-	JButton buttonOne = new JButton("Next");
-	JButton buttonSecond = new JButton("Previous");
+	JPanel panelThird = new JPanel();
+	JButton buttonOne = new JButton("Save");
+	JButton buttonSecond = new JButton("Next");
+	JButton buttonThird = new JButton("Previous");
+	JButton buttonFourth = new JButton("Submit");
+	
 	
 	CardLayout cl = new CardLayout();
 	
@@ -20,11 +25,15 @@ public class Quiz extends JFrame{
 	JLabel roll = new JLabel("Enter your roll no. : ") ;
 	JTextField tf2 = new JTextField(25);
 
+	JLabel Q1 = new JLabel("Question001.. ") ;
+	JLabel Q2 = new JLabel("Question002.. ") ;
+	JLabel Q3 = new JLabel("Question003.. ") ;
+	
+
 	public Quiz() {
 		
 		panelCont.setLayout(cl); 
 
-		
 		name.setFont(new Font("Osward",Font.BOLD,38)); 
 		roll.setFont(new Font("Osward",Font.BOLD,38));
 		
@@ -46,17 +55,25 @@ public class Quiz extends JFrame{
 		
 		panelFirst.add(tf2);
 		panelFirst.add(buttonOne);
+		panelSecond.add(Q1);
+		panelSecond.add(Q2);
 		panelSecond.add(buttonSecond);
+		panelThird.add(Q3);
+		panelThird.add(buttonThird);
+		panelThird.add(buttonFourth);
+
 		panelFirst.setBackground(Color.BLACK);
 		panelSecond.setBackground(Color.pink);
 
 		panelCont.add(panelFirst, "1");
 		panelCont.add(panelSecond, "2");
+		panelCont.add(panelThird, "3");
 		cl.show(panelCont, "1");
 		
 		buttonOne.addActionListener(new ActionListener() {
 			@Override
 			public void actionPerformed(ActionEvent arg0) {
+
 				cl.show(panelCont, "2");
 			}
 		});
@@ -64,7 +81,21 @@ public class Quiz extends JFrame{
 		buttonSecond.addActionListener(new ActionListener() {
 			@Override
 			public void actionPerformed(ActionEvent arg0) {
-				cl.show(panelCont, "1");
+				cl.show(panelCont, "3");
+			}
+		});
+
+		buttonThird.addActionListener(new ActionListener() {
+			@Override
+			public void actionPerformed(ActionEvent arg0) {
+				cl.show(panelCont, "2");
+			}
+		});
+
+		buttonFourth.addActionListener(new ActionListener() {
+			@Override
+			public void actionPerformed(ActionEvent arg0) {
+				//submit karneka. marks calculate karneka.
 			}
 		});
 		
